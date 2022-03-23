@@ -1,50 +1,17 @@
 import React from 'react';
 import SmallCard from './SmallCard';
 
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Movies in DB --> */
-
-let moviesInDB = {
-    title: 'Movies in Data Base',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-let totalAwards = {
-    title:' Total awards', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
-
-/* <!-- Actors quantity --> */
-
-let actorsQuantity = {
-    title:'Actors quantity' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
 
 function ContentRowMovies(){
     return (
     
-        <div className="row">
-            
-            {cartProps.map( (movie, i) => {
-
-                return <SmallCard {...movie} key={i}/>
-            
-            })}
-
+        <div className="row d-flex flex-wrap">
+                <SmallCard title="Cantidad total de productos" type="products" color="primary" />
+                <SmallCard title="Cantidad total de usuarios" type="users" color="secondary" />
+                <SmallCard title="Cantidad total de categorias de productos" type="categories" color="warning"  />
+                <SmallCard title="Cantidad total de talles" type="sizes" color="danger" />
+                <SmallCard title="Cantidad total de rangos de edades para productos" type="ages" color="success" />
         </div>
     )
 }
-
 export default ContentRowMovies;
